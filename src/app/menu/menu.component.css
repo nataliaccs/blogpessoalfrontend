@@ -1,0 +1,11 @@
+.bg {
+    background-color: rgb(189, 141, 235);
+}
+
+.fs-16{
+    font-size: 16pt;
+}
+
+a{
+    cursor: pointer;
+}
