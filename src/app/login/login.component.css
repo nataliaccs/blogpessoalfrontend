@@ -1,12 +1,28 @@
 #img-bg{
-    background-image: url('https://i.imgur.com/O0pHgZX.png');
+    background-image: url('https://i.imgur.com/wClbAdW.jpg');
 
-    height: 900px;
+    height: 935px;
     
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+
 }
 
 .bg{
     background-color: rgb(227, 202, 250);
+}
+
+.caixa{
+   color: rgb(105, 27, 177);
+    background-color: rgb(175, 179, 245);
+}
+
+.c-b{
+    color: rgb(66, 21, 124);
+    
+}
+
+.borda{
+    border-radius:40px;
 }
