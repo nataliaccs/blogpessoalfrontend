@@ -46,7 +46,7 @@
 
                         <div class="form-group">
                             <label for="tipoUser"> Tipo de Usuário</label>
-                            <select class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
+                            <select [(ngModel)]="user.tipo"  class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
                                 <option>Selecione um tipo de usuário: </option>
                                 <option value="normal">Normal</option>
                                 <option value="adm">Administrador</option>
