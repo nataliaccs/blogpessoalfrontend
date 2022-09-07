@@ -36,12 +36,21 @@ export class TemaComponent implements OnInit {
   }
 
   cadastrar(){
-    this.temaService.postTema(this.tema).subscribe((resp: Tema)=> {
-      this.tema = resp 
+    this.temaService.postTema(this.tema).subscribe({
+      next: (resp:Tema) =>{
+      this.tema = resp
       alert('Tema cadastrado com sucesso!')
-      this.findAllTemas()
       this.tema = new Tema()
-    })
-  }
+      this.findAllTemas()
 
+
+      },
+      error: (erro) => {
+        if(erro.status == 400){
+          alert('Tema não pode ser cadastrado pois já existe um tema com está descrição');
+        }
+      },
+    })
+
+  }
 }
