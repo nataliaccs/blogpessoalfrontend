@@ -35,19 +35,10 @@ export class TemaEditComponent implements OnInit {
   }
 
   atualizar(){
-    console.log(this.tema)
-    this.temaService.putTema(this.tema).subscribe({
-      next:(resp: Tema) =>{
+    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      alert('Tema atualizado')
-      console.log(this.tema)
-      this.router.navigate(['/temas'])
-      },
-      error: (erro) => {
-        if(erro.status == 409){
-          alert('Não é possivel atualziar o tema pois a descrição já existe!')
-        }
-      },
+      alert('Tema atualizado com sucesso!')
+      this.router.navigate(['/tema'])
     })
   }
 

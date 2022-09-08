@@ -31,7 +31,7 @@ export class TemaDeleteComponent implements OnInit {
   }
 
   findByIdTema(id: number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema)=>{
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
       this.tema = resp
     })
   }

@@ -49,6 +49,7 @@ export class InicioComponent implements OnInit {
     }
   
     this.getAllTemas()
+    this.getAllPostagens()
   
 
   }
@@ -66,6 +67,13 @@ export class InicioComponent implements OnInit {
 
   }
 
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
+
+
   publicar(){
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -76,7 +84,7 @@ export class InicioComponent implements OnInit {
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
-      
+
     })
 
   }
