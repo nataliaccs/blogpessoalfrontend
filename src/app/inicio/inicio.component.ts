@@ -17,7 +17,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
-  tituloPost: string
+ 
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -28,8 +28,7 @@ export class InicioComponent implements OnInit {
   idUser = environment.id
   foto= environment.foto
 
-  key = 'date'
-  reverse = true
+  
 
   constructor(
     private router: Router,
@@ -55,7 +54,7 @@ export class InicioComponent implements OnInit {
   }
 
   getAllTemas(){
-    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
@@ -71,7 +70,14 @@ export class InicioComponent implements OnInit {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
     })
+    
   }
+
+ findByIdUser(){
+  this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
+    this.user = resp
+  })
+ }
 
 
   publicar(){
@@ -84,6 +90,8 @@ export class InicioComponent implements OnInit {
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
+      this.postagem = new Postagem()
+      this.getAllPostagens()
 
     })
 

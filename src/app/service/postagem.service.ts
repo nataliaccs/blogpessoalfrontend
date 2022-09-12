@@ -19,21 +19,21 @@ export class PostagemService {
     return this.http.get<Postagem[]>(
       'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       this.token
-    );
+    )
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
     return this.http.get<Postagem>(
       `https://blogpessoalnataliacosta.herokuapp.com/postagem/${id}`,
       this.token
-    );
+    )
   }
 
   getByTitulo(titulo: string): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
       `https://blogpessoalnataliacosta.herokuapp.com/postagem/titulo/${titulo}`,
       this.token
-    );
+    )
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
@@ -41,7 +41,7 @@ export class PostagemService {
       'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       postagem,
       this.token
-    );
+    )
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem> {
@@ -49,14 +49,14 @@ export class PostagemService {
       'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       postagem,
       this.token
-    );
+    )
   }
 
   deletePostagem(id: number) {
     return this.http.delete(
       `https://blogpessoalnataliacosta.herokuapp.com/postagem/${id}`, 
       this.token
-    );
+    )
   }
 
 }
