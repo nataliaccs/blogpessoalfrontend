@@ -17,28 +17,28 @@ export class PostagemService {
 
   getAllPostagens(): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
-      'http://localhost:8080/postagem',
+      'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       this.token
     )
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
     return this.http.get<Postagem>(
-      `http://localhost:8080/postagem/${id}`,
+      `https://blogpessoalnataliacosta.herokuapp.com/postagem/${id}`,
       this.token
     )
   }
 
   getByTitulo(titulo: string): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
-      `http://localhost:8080/postagem/titulo/${titulo}`,
+      `https://blogpessoalnataliacosta.herokuapp.com/postagem/titulo/${titulo}`,
       this.token
     )
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
-      'http://localhost:8080/postagem',
+      'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       postagem,
       this.token
     )
@@ -46,7 +46,7 @@ export class PostagemService {
 
   putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>(
-      'http://localhost:8080/postagem',
+      'https://blogpessoalnataliacosta.herokuapp.com/postagem',
       postagem,
       this.token
     )
@@ -54,7 +54,7 @@ export class PostagemService {
 
   deletePostagem(id: number) {
     return this.http.delete(
-      `http://localhost:8080/postagem/${id}`, 
+      `https://blogpessoalnataliacosta.herokuapp.com/postagem/${id}`, 
       this.token
     )
   }
